@@ -1,0 +1,109 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          
+            transition: all 0.5s ease;
+            z-index: 1000;
+
+            background-color: brown;
+            background-image: url(../imagen/fondoLineasmovil.svg);
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 2em;
+            font-weight: bold;
+            text-decoration: none;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .menu-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .menu-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+
+        .menu-links a:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-2px);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            color: #fff;
+            font-size: 1.5em;
+        }
+
+        .content {
+            height: 200vh;
+            background: linear-gradient(45deg, #1a1a1a, #2d2d2d);
+            padding: 100px 50px;
+            color: #fff;
+        }
+
+        /*.hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: url('https://picsum.photos/1920/1080') center/cover;
+        }*/
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 20px 30px;
+                background-color: brown;
+                background-image: url(../imagen/fondoLineasmovil.svg);
+               
+            }
+
+            .menu-links {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: rgba(0,0,0,0.9);
+                flex-direction: column;
+                align-items: center;
+                padding: 50px 0;
+                transition: all 0.5s ease;
+            }
+
+            .menu-links.active {
+                right: 0;
+            }
+
+            .menu-links a {
+                font-size: 1.5em;
+                padding: 15px 30px;
+            }
+
+            .hamburger {
+                display: block;
+            }
+        }

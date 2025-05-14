@@ -1,0 +1,317 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    /*font-family: 'Montserrat', sans-serif;*/
+    background-color: #f8f8f8;
+}
+
+#countdownModal{
+    margin-top: -90px;
+}
+
+.modal_titulo{
+    
+    font-family: "Rubik Mono One", monospace;
+    font-weight: 400;
+    font-style: normal;
+      
+      
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 150%;
+    background-color: rgba(255, 255, 255, 1);
+    animation: fadeIn 0.5s ease-out;
+
+    transition: opacity 0.3s ease-out, transform 0.4s ease-out;
+
+    cursor: default; 
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    position: relative;
+    background: white;
+    margin: 5% auto;
+    padding: 0;
+    width: 85%;
+    max-width: 800px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 30px 30px rgba(0, 0, 0, 0.9);
+}
+
+.modal-header {
+    padding: 25px;
+    text-align: center;
+    border-bottom: 2px solid #eee;
+}
+
+.modal-header h1 {
+    margin: 0;
+
+    font-family: "Agbalumo", system-ui;
+    font-weight: 400;
+    font-style: normal;
+
+    /*font-family: 'Playfair Display', serif;*/
+    font-size: 3rem;
+    font-weight: 700;
+    color: #d32f2f;
+    text-shadow: 0 2px 4px rgba(211, 47, 47, 0.3);
+}
+
+.close {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.close:hover {
+    color: #d32f2f;
+    transform: rotate(90deg);
+}
+
+.modal-body {
+    padding: 0 25px 25px;
+}
+
+
+
+
+
+
+
+
+/* Añadimos estas nuevas reglas CSS */
+.modal {
+    /* ... (mantener propiedades existentes) ... */
+    transition: opacity 0.3s ease-out, transform 0.4s ease-out;
+}
+
+.modal.fade-out {
+    opacity: 0;
+    transform: translateY(-50px);
+}
+
+.modal-content {
+    /* ... (mantener propiedades existentes) ... */
+    transition: all 0.4s ease-out;
+}
+
+.modal.hiding .modal-content {
+    transform: translateY(-100px);
+    opacity: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Imagen del evento */
+.event-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 0px;
+    margin: 20px 0;
+    /*box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);*/
+}
+
+.event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.event-image:hover img {
+    transform: scale(1.03);
+}
+
+/* Contador */
+.countdown-title {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.countdown-title h2 {
+    margin: 0;
+
+    
+        font-family: "Agbalumo", system-ui;
+        font-weight: 400;
+        font-style: normal;
+      
+      
+      
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #d32f2f;
+    letter-spacing: 3px;
+}
+
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+    gap: 25px;
+}
+
+.countdown-box {
+    width: 120px;
+    height: 120px;
+    background: white;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0px 20px rgba(123, 4, 4, 0.8);
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.countdown-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(211, 47, 47, 0.05));
+    z-index: 0;
+}
+
+.countdown-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(211, 47, 47, 0.3);
+}
+
+.countdown-box span {
+    display: block;
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #d32f2f;
+    position: relative;
+    z-index: 1;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { text-shadow: 0 0 5px rgba(211, 47, 47, 0.3); }
+    50% { text-shadow: 0 0 15px rgba(211, 47, 47, 0.5); }
+    100% { text-shadow: 0 0 5px rgba(211, 47, 47, 0.3); }
+}
+
+.countdown-box p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+}
+
+.event-description {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.event-description p {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #666;
+    font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%;
+        margin: 10% auto;
+    }
+    
+    .modal-header h1 {
+        font-size: 1.6rem;
+    }
+    
+    .countdown-container {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    .countdown-box {
+        width: calc(50% - 30px);
+        margin-bottom: 15px;
+    }
+    
+    .countdown-box span {
+        font-size: 2.2rem;
+    }
+    
+    .event-image {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .countdown-box {
+        width: calc(50% - 20px);
+        height: 100px;
+    }
+    
+    .modal-header {
+        padding: 20px;
+    }
+    
+    .modal-header h1 {
+        font-size: 1.3rem;
+    }
+    
+    .close {
+        right: 20px;
+        top: 20px;
+        font-size: 24px;
+    }
+    
+    .event-image {
+        height: 160px;
+    }
+    
+    .countdown-box span {
+        font-size: 1.8rem;
+    }
+    
+    .countdown-box p {
+        font-size: 0.8rem;
+    }
+}
